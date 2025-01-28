@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My website</title>
-    </head>
-    <body>
-        
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London's Closet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleImages() {
+            var firstImage = document.getElementById("firstImage");
+            var secondImage = document.getElementById("secondImage");
 
+            // Hide the first image and show the second image
+            firstImage.style.display = "none";
+            secondImage.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <!-- First image -->
+        <img id="firstImage" src="1306a3548a79cb20815348110c69d4ee.jpg" alt="First Image">
+
+        <!-- Second image (Initially hidden) -->
+        <img id="secondImage" src="london.jpg" alt="Second Image" style="display: none;"/>
+
+        <!-- Link to trigger the image toggle -->
+        <a href="javascript:void(0);" onclick="toggleImages()">Click me</a>
+    </div>
+
+    <header>
+        <h1>London's Closet</h1>
+        <p>Here is a short bio of my Webpage</p>
+        <li><a href="Main search page">Main search page</a></li>
+    </header>
+
+    <!-- Navigation links -->
+    <nav>
+        <ul>
+            <li><a href="Homepage">Main search page</a></li>
+            <li><a href="Clothes">Clothes</a></li>
+        </ul>
+    </nav>
+
+    <!-- The main element for the dominant content -->
+    <main>
+        <article>
+            <h2>My Article</h2>
+            <p>This is my latest article on my blog.</p>
+        </article>
+    </main>
+
+    <!-- The footer element is where author and copyright information goes -->
+    <footer>
+        <p>Author: London</p>
+        <p>&copy; 2025 London's Closet website</p>
+    </footer>
+</body>
 </html>

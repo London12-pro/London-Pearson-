@@ -1,0 +1,94 @@
+/* Initially hide the second image */
+#secondImage {
+    display: none;
+    width: 100%;        /* Makes the image take the full width of the container */
+    max-width: 1200px;  /* Maximum width of the image */
+    height: auto;       /* Maintains the aspect ratio */
+}
+
+/* Initially hide the first image */
+#firstImage {
+    width: 100%;        /* Makes the first image take the full width */
+    max-width: 1200px;  /* Maximum width of the image */
+    height: auto;       /* Maintains the aspect ratio */
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+article h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
