@@ -1,0 +1,27 @@
+/* Make images smaller on the screen */
+.card-img-top {
+    max-height: 200px; /* Limit image size */
+    object-fit: cover;
+}
+
+/* Ensure the navbar is not hidden behind content */
+body {
+    padding-top: 80px; /* Adjust according to your navbar height */
+}
+
+/* Cart Icon */
+i.bi-cart {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Hover effect on cards */
+.card {
+    border: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
