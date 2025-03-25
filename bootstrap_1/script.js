@@ -1,14 +1,37 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let isUserLoggedIn = false;
+document.addEventListener('DOMContentLoaded', function() {
+    const registrationForm = document.getElementById('registrationForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const loginForm = document.getElementById('loginForm');
+    const loginErrorMessage = document.getElementById('loginErrorMessage');
+    const storedUsers = localStorage.getItem('users');
+    let users = storedUsers ? JSON.parse(storedUsers) : [];
 
-    let messageElement = document.createElement("p");
-    messageElement.classList.add("welcome-message");
+    registrationForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const userExists = users.some(user => user.username === username);
+        if (userExists) {
+            errorMessage.textContent = 'Username already exists.';
+            return;
+        }
+        const newUser = { username, password };
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+        errorMessage.textContent = '';
+        window.location.href = 'new-collection.html';
+    });
 
-    if (isUserLoggedIn) {
-        messageElement.textContent = "Welcome back, enjoy shopping!";
-    } else {
-        messageElement.textContent = "Please log in to start shopping.";
-    }
-
-    document.body.appendChild(messageElement);
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+        const user = users.find(user => user.username === username && user.password === password);
+        if (user) {
+            loginErrorMessage.textContent = '';
+            window.location.href = 'new-collection.html';
+        } else {
+            loginErrorMessage.textContent = 'Invalid username or password.';
+        }
+    });
 });
