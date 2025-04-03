@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginErrorMessage = document.getElementById('loginErrorMessage');
     const storedUsers = localStorage.getItem('users');
     let users = storedUsers ? JSON.parse(storedUsers) : [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     registrationForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -33,5 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             loginErrorMessage.textContent = 'Invalid username or password.';
         }
+    });
+
+    // Add to Cart functionality
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemName = this.dataset.name;
+            const itemPrice = parseFloat(this.dataset.price);
+            const item = { name: itemName, price: itemPrice, quantity: 1 };
+            const existingItem = cart.find(cartItem => cartItem.name === itemName);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push(item);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html';
+        });
     });
 });
