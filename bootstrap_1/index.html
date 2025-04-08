@@ -36,6 +36,7 @@
     </header>
 
     <main class="container mt-5">
+      
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-lg p-3 mb-5 bg-body rounded">
@@ -75,7 +76,105 @@
             </div>
         </div>
     </main>
-
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>London's Closet</title>
+     <link rel="stylesheet" href="styles.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ 
+ </head>
+ <body>
+     <header>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                 <a class="navbar-brand" href="index.html">London's Closet</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                         <li class="nav-item"><a class="nav-link" href="new-collection.html">New Collection</a></li>
+                         <li class="nav-item"><a class="nav-link" href="clothes.html">Clothes</a></li>
+                         <li class="nav-item"><a class="nav-link" href="new-arrivals.html">New Arrivals</a></li>
+                         <li class="nav-item"><a class="nav-link" href="accessories.html">Accessories</a></li>
+                         <li class="nav-item">
+                             <a href="cart.html" class="nav-link">
+                                 <i class="fas fa-shopping-cart"></i> <!-- Shopping Cart Icon -->
+                             </a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </nav>
+     </header>
+ 
+     <main class="container mt-5">
+       
+         <div class="row justify-content-center">
+             <div class="col-md-6">
+                 <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                     <div class="card-body">
+                         <h2 class="card-title mb-4">Welcome to London's Closet!</h2>
+                         <p class="card-text mb-4">Please Log in or Create an Account</p>
+                         <div id="auth-section">
+                             <form id="loginForm" class="mb-3">
+                                 <div class="mb-3">
+                                     <label for="loginUsername" class="form-label">Username</label>
+                                     <input type="text" class="form-control" id="loginUsername" required>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="loginPassword" class="form-label">Password</label>
+                                     <input type="password" class="form-control" id="loginPassword" required>
+                                 </div>
+                                 <button type="submit" class="btn btn-primary">Log in</button>
+                                 <div id="loginErrorMessage" class="error-message mt-2"></div>
+                             </form>
+ 
+                             <form id="registrationForm">
+                                 <h2>Create Account</h2>
+                                 <div class="mb-3">
+                                     <label for="username" class="form-label">Username:</label>
+                                     <input type="text" class="form-control" id="username" required>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="password" class="form-label">Password:</label>
+                                     <input type="password" class="form-control" id="password" required>
+                                 </div>
+                                 <button type="submit" class="btn btn-primary">Create Account</button>
+                                 <div id="errorMessage" class="error-message mt-2"></div>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- Music Embed -->
+         <div class="video-container text-center mt-4">
+           <iframe
+             width="300"
+             height="170"
+             src="https://www.youtube.com/embed/3YZcusDiiBA?autoplay=1&mute=1&loop=1&playlist=3YZcusDiiBA"
+             title="Unforgettable - French Montana ft. Swae Lee"
+             frameborder="0"
+             allow="autoplay; encrypted-media"
+             allowfullscreen
+           ></iframe>
+         </div>
+     </main>
+  
+     <footer class="bg-dark text-light text-center p-3 mt-5">
+         <p>&copy; 2025 London's Closet. All rights reserved.</p>
+     </footer>
+     <script src="script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ </body>
+ </html>
+ 
     <footer class="bg-dark text-light text-center p-3 mt-5">
         <p>&copy; 2025 London's Closet. All rights reserved.</p>
     </footer>
