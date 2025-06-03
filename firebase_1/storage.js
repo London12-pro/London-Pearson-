@@ -1,13 +1,27 @@
-import { storage } from '../firebase_1/firebase-init.js';
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL
-} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js";
+import { storage } from './firebase-config.js';
+import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-storage.js";
 
-// Upload media
-export async function uploadMedia(file, folder = "uploads") {
-  const fileRef = ref(storage, `${folder}/${file.name}`);
-  await uploadBytes(fileRef, file);
-  return await getDownloadURL(fileRef);
-}
+document.getElementById('uploadBtn').addEventListener('click', async () => {
+  const fileInput = document.getElementById('fileInput');
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Please choose a file first.");
+    return;
+  }
+
+  const storageRef = ref(storage, 'uploads/' + file.name);
+
+  try {
+    await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(storageRef);
+
+    document.getElementById('uploadStatus').textContent = "Upload successful!";
+    const img = document.getElementById('uploadedImage');
+    img.src = downloadURL;
+    img.style.display = "block";
+  } catch (error) {
+    console.error("Upload failed:", error);
+    document.getElementById('uploadStatus').textContent = "Upload failed.";
+  }
+});

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>London's Closet - Welcome</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to London's Closet</h1>
+    <div class="auth-links">
+      <a href="signup.html">Sign Up</a>
+      <a href="login.html">Login</a>
+    </div>
+
+    <h2>Upload an Image</h2>
+    <input type="file" id="fileInput" accept="image/*">
+    <button id="uploadBtn">Upload</button>
+    <p id="uploadStatus"></p>
+
+    <h2>Uploaded Image:</h2>
+    <img id="uploadedImage" src="" alt="Uploaded Image" style="max-width: 300px; display:none;" />
+  </div>
+
+  <script type="module" src="storage.js"></script>
+</body>
+</html>
